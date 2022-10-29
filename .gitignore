@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+
+# Compiled Python bytecode
+*.py[cod]
+
+# Applications
+*.app
+*.exe
+*.war
+
+# Log files
+*.log
