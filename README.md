@@ -15,7 +15,9 @@ To facilitate environment creation and requirements installation, `prepare.sh` s
 main directory can be launched.
 
 ### Running
-Launch `run.sh` script to run the app using the newly created virtual environment.
+*Manually*: For manual activation, run `source venv/bin/activate` to activate the virtual environment and `deactivate` to finish. While the environment is activated, run your commands as you normally would using `python3` as your interpreter.
 
-//TODO skrypt na razie nic nie robi, aktywacja venv poprzez `venv/bin/activate` oraz
-wyłączanie poprzez `deactivate`.
+*Automatically*: In order to automatically launch a ready configuration, use `run.sh` script to run the app using the newly created virtual environment.
+
+Currently the script uses venv to launch the django server and open a webpage: http://127.0.0.1:8000/test_app. This content will be updated accordingly.
+
