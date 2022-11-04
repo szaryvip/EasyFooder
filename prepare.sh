@@ -20,9 +20,9 @@ then
 	fi
 fi
 
-if [ -z `python3 --version | grep "3.9"` ]
+if [ `python3 --version | cut -d ' ' -f 2 | cut -d '.' -f 2` -lt 9 ]
 then
-	# python3 is not 3.9
+	# python3 is not greater or equal than 3.9
 	
 	if [ -z `which python3.9` ]
 	then
