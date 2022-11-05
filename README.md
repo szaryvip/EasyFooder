@@ -18,5 +18,5 @@ main directory can be launched.
 *Manually*: For manual activation, run `source venv/bin/activate` to activate the virtual environment and `deactivate` to finish. While the environment is activated, run your commands as you normally would using `python3` as your interpreter.
 
 *Automatically*: In order to automatically launch a ready configuration, use `run.sh` script to run the app using the newly created virtual environment.
-Currently the script uses venv to launch the django server and open a webpage: http://127.0.0.1:8000/test_app. This content will be updated accordingly.
+Currently the script does not launch anything, as database automization is not supported yet. This content will be updated accordingly.
 
