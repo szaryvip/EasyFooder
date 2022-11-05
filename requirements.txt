@@ -2,3 +2,5 @@ Django
 pytest
 coverage
 django-environ
+psycopg2
+
