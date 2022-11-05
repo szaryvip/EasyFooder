@@ -37,10 +37,29 @@ else
 	PYTHON="python3"
 fi
 
-if [[ -z `dpkg -l | grep $PYTHON-dev` || -z `dpkg -l | grep $PYTHON-venv` ]]
+# Check if system requirements changed
+MISSING=""
+while read line
+do
+	if [[ ! -z "$line" && -z `dpkg -l | grep "$line"` ]]
+	then
+		# This package is missing
+		if [ -z $MISSING ]
+		then
+			MISSING="$line"
+		else
+			MISSING="$MISSING, $line"
+		fi
+	fi
+done < requirements_system.txt
+
+if [[ ! -z "$MISSING" ]]
 then
-	echo "Note that $PYTHON-dev and $PYTHON-venv packages need to be installed - root privileges needed for that."
-	sudo apt install -y $PYTHON-dev $PYTHON-venv
+	echo "One or more packages is missing."
+	echo "The following packages will be installed: $MISSING."
+	echo "Your credentials will be needed to run apt install."
+	sudo xargs apt install -y < requirements_system.txt
+	echo "Missing system packages installed."
 fi
 
 echo "Creating virtual environment..."
