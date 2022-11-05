@@ -9,7 +9,7 @@ VENV="venv"
 # Removing old venv
 if [ -d "./$VENV" ]
 then
-	read -p "Old ./$VENV directory will be deleted. Proceed? (y/n) " -n 1 -r
+	read -p "Old $VENV directory will be deleted. Proceed? (y/n) " -n 1 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
 		rm -r ./$VENV
@@ -47,6 +47,6 @@ echo "Creating virtual environment..."
 `$PYTHON -m venv ./$VENV`
 
 echo "Installing required packages..."
-venv/bin/python3 -m pip install -r requirements.txt
+$venv/bin/python3 -m pip install -r requirements.txt
 
 echo "Preparation complete."
