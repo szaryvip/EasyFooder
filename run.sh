@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 VENV="venv"
 
 if [ ! -d "./$VENV" ]
@@ -18,7 +20,12 @@ fi
 
 # Venv activated
 
-# TODO check if requirements.txt changed
+# Check if requirements.txt changed (and not satisfied)
+if [ -nz `pip3 freeze -r requirements.txt | grep "not installed"` ]
+then
+	echo "Installing missing packages..."
+	pip3 install -r requirements.txt
+fi
 
 echo "Running Django server... Press Ctrl+C anytime to stop execution"
 python3 src/Django/EasyFooder/manage.py runserver &

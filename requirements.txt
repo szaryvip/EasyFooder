@@ -1,2 +1,4 @@
 Django
+pytest
+coverage
 django-environ
