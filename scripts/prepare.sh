@@ -73,6 +73,8 @@ echo "Creating virtual environment..."
 `$PYTHON -m venv ./$VENV`
 
 echo "Installing required packages..."
+# Wheel needs to be installed before all other requirements
+$VENV/bin/python3 -m pip install wheel
 $VENV/bin/python3 -m pip install -r requirements.txt
 
 echo "Preparation complete."
