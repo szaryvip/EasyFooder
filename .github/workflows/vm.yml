@@ -23,3 +23,29 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+
+  vm:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create secret-file.txt from B64_SECRET1
+      id: secret-file1
+      run: |
+        $secretFile = Join-Path -Path $env:RUNNER_TEMP -ChildPath "key.pem"; 
+        $encodedBytes = [System.Convert]::FromBase64String($env:SECRET_DATA1); 
+        Set-Content $secretFile -Value $encodedBytes -AsByteStream;
+        Write-Output "::set-output name=SECRET_FILE::$secretFile";
+      shell: pwsh
+      env:
+        SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
+
+    - name: Deploy Virtual Machine
+      run: |
+        ./scripts/vm_deploy.sh SECRET_DATA1
+
+    - name: Delete secret file
+      run: |
+        Remove-Item -Path $env:SECRET_FILE;
+      shell: pwsh
+      if: always()
+      env:
+        SECRET_FILE: ${{ steps.secret-file1.outputs.SECRET_FILE }}
