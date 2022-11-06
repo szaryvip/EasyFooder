@@ -31,20 +31,27 @@ then
 	fi
 	
 	PYTHON="python3.9"
+	
+	# Install python3.9- packages
+	if [[ -z `dpkg -l | grep $PYTHON-dev` || -z `dpkg -l | grep $PYTHON-venv` ]]
+	then
+		echo "Note that $PYTHON-dev and $PYTHON-venv packages need to be installed - root privileges needed for that."
+		sudo apt install -y $PYTHON-dev $PYTHON-venv
+	fi
 else
 	# python3 is 3.9
 	
 	PYTHON="python3"
 fi
 
-# Check if system requirements changed
+# Check if system requirements satisfied
 MISSING=""
 while read line
 do
 	if [[ ! -z "$line" && -z `dpkg -l | grep "$line"` ]]
 	then
 		# This package is missing
-		if [ -z $MISSING ]
+		if [ -z "$MISSING" ]
 		then
 			MISSING="$line"
 		else

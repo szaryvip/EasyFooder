@@ -27,7 +27,7 @@ do
 	if [[ ! -z "$line" && -z `dpkg -l | grep "$line"` ]]
 	then
 		# This package is missing
-		if [ -z $MISSING ]
+		if [ -z "$MISSING" ]
 		then
 			MISSING="$line"
 		else
