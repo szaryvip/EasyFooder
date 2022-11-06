@@ -73,6 +73,6 @@ echo "Creating virtual environment..."
 `$PYTHON -m venv ./$VENV`
 
 echo "Installing required packages..."
-$venv/bin/python3 -m pip install -r requirements.txt
+$VENV/bin/python3 -m pip install -r requirements.txt
 
 echo "Preparation complete."
