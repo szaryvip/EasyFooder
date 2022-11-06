@@ -77,4 +77,12 @@ echo "Installing required packages..."
 $VENV/bin/python3 -m pip install wheel
 $VENV/bin/python3 -m pip install -r requirements.txt
 
+# Database configuration TODO
+#read -p "Configure database? (y/n) " -n 1 -r
+#if [[ $REPLY =~ ^[Yy]$ ]]
+#then
+#	scripts/db_setup.sh
+#fi
+
 echo "Preparation complete."
+
