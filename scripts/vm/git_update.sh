@@ -4,4 +4,10 @@
 # and installing missing system & Python packages, as listed in
 # requirements files.
 
-# TODO
+cd EasyFooder
+
+# Python packages
+pip install -r requirements.txt
+
+# System packages
+sudo xargs apt install < requirements_system.txt -y
