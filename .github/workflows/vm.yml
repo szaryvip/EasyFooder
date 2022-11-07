@@ -43,6 +43,7 @@ jobs:
       run: |
         cd ${GITHUB_WORKSPACE}/
         pwd
+        ls -a
         bash ./scripts/vm_deploy.sh SECRET_DATA1
 
     - name: Delete secret file
