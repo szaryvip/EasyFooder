@@ -41,7 +41,8 @@ jobs:
 
     - name: Deploy Virtual Machine
       run: |
-        bash ${GITHUB_WORKSPACE}/scripts/vm_deploy.sh SECRET_DATA1
+        cd ${GITHUB_WORKSPACE}/
+        bash scripts/vm_deploy.sh SECRET_DATA1
 
     - name: Delete secret file
       run: |
