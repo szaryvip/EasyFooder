@@ -26,6 +26,8 @@ jobs:
         pip install django-nose
     - name: Test Coverage
       run: |
+        cd ../..
+        ls
         coverage run manage.py test
         coverage report -m
     - name: Run Tests
