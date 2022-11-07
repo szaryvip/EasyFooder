@@ -26,7 +26,11 @@ jobs:
         pip install django-nose
     - name: Test Coverage
       run: |
-        cd ../..
+        cd ..
+        pwd
+        echo "test"
+        ls
+        echo "pols"
         cd EasyFooder/src/Django/EasyFooder
         coverage run manage.py test
         coverage report -m
