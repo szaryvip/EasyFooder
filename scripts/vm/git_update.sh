@@ -6,7 +6,7 @@
 
 cd EasyFooder
 
-# Pulling from git using deploy key configured as in here:
+# Pulling from git using deploy key configured similarly as in here:
 # https://dylancastillo.co/how-to-use-github-deploy-keys/
 git pull
 
