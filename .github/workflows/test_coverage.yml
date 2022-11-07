@@ -24,11 +24,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install django-nose
-    - name: Run Tests
-      run: |
-        python manage.py test --with-coverage
     - name: Test Coverage
       run: |
         coverage run manage.py test
         coverage report -m
+    - name: Run Tests
+      run: |
+        python manage.py test
         
