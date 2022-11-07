@@ -6,6 +6,10 @@
 
 cd EasyFooder
 
+# Pulling from git using deploy key configured as in here:
+# https://dylancastillo.co/how-to-use-github-deploy-keys/
+git pull
+
 # Python packages
 pip install -r requirements.txt
 
