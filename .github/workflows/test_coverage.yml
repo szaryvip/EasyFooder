@@ -27,7 +27,7 @@ jobs:
     - name: Test Coverage
       run: |
         cd ../..
-        ls
+        cd EasyFooder/src/Django/EasyFooder
         coverage run manage.py test
         coverage report -m
     - name: Run Tests
