@@ -22,29 +22,17 @@ echo "Changed password."
 
 if [ -f $ENV_PATH ]
 then
-	read -p "Use existing .env file? (y/n) " -n 1 -r
+	read -p "Change password in existing .env file? (y/n) " -n 1 -r
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
-		sed "s/DB_PASSWORD=.*/DB_PASSWORD=$PASS/" $ENV_PATH > $ENV_PATH
-		echo "Database setup complete."
-		exit 0
+		sed "s/DB_PASSWORD=.*/DB_PASSWORD=$PASS/" $ENV_PATH > .tmp_env && mv .tmp_env $ENV_PATH
+	else
+		echo "OK. You may need to change the file manually."
 	fi
+else
+	echo "Please follow https://easyfooder.atlassian.net/wiki/spaces/SD/pages/852518/Konfiguracja+bazy+danych to create .env file (this cannot be automated due to security reasons)."
 fi
 
-REPLY=""
-while [ -z $REPLY ]
-do
-	read -p "Please provide a path to the .env file (content be copied to the destination location): " -r
-	echo
-	if [ ! -f "$REPLY" ]
-	then
-		echo "Path incorrect, try again."
-		REPLY=""
-	fi
-done
-
-cp $REPLY $ENV_PATH
-sed "s/DB_PASSWORD=.*/DB_PASSWORD=$PASS/" $ENV_PATH > $ENV_PATH
 echo "Database setup complete."
 
