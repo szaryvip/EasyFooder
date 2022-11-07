@@ -10,8 +10,8 @@ cd EasyFooder
 # https://dylancastillo.co/how-to-use-github-deploy-keys/
 git pull
 
-# Python packages
-pip install -r requirements.txt
-
 # System packages
 sudo xargs apt install < requirements_system.txt -y
+
+# Python packages
+pip install -r requirements.txt
