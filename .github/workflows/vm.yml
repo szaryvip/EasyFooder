@@ -40,9 +40,8 @@ jobs:
 
     - name: Deploy Virtual Machine
       run: |
-        ls -a ../
         ls -a ../../
-        ../../scripts/vm_deploy.sh SECRET_DATA1
+        scripts/vm_deploy.sh SECRET_DATA1
 
     - name: Delete secret file
       run: |
