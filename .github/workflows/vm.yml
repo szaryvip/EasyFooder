@@ -27,6 +27,7 @@ jobs:
   vm:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Create secret-file.txt from B64_SECRET1
       id: secret-file1
       run: |
