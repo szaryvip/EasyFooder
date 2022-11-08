@@ -42,6 +42,8 @@ jobs:
 
     - name: Deploy Virtual Machine
       run: |
+        pwd
+        ls -a
         bash ./scripts/vm_deploy.sh key.pem
 
     - name: Delete secret file
