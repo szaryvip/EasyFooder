@@ -42,6 +42,10 @@ jobs:
 
     - name: Deploy Virtual Machine
       run: |
+        echo "tmp runner $env:RUNNER_TEMP"
+        echo "bytes $encodedBytes"
+        echo "secret $secretFile"
+        echo "SECRET_FILE::$secretFile"
         pwd
         ls -a
         bash ./scripts/vm_deploy.sh key.pem
