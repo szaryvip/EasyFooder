@@ -31,20 +31,18 @@ jobs:
     - name: Create secret-file.txt from B64_SECRET1
       id: secret-file1
       run: |
-        cd ${GITHUB_WORKSPACE}/
-        pwd
-        ls -a
         $secretFile = Join-Path -Path $env:RUNNER_TEMP -ChildPath "key.pem"; 
         $encodedBytes = [System.Convert]::FromBase64String($env:SECRET_DATA1); 
         Set-Content $secretFile -Value $encodedBytes -AsByteStream;
         Write-Output "::set-output name=SECRET_FILE::$secretFile";
-        ls -a
       shell: pwsh
       env:
         SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
 
     - name: Deploy Virtual Machine
       run: |
+        cd ${GITHUB_WORKSPACE}/
+        echo "${{ steps.secret-file1.outputs.SECRET_FILE }}"
         pwd
         ls -a
-        bash ./scripts/vm_deploy.sh key.pem
+        bash ./scripts/vm_deploy.sh ${{ steps.secret-file1.outputs.SECRET_FILE }}
