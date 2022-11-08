@@ -42,6 +42,8 @@ jobs:
 
     - name: Deploy Virtual Machine
       run: |
+        echo "KEY ${{ secrets.SSH_VM_KEY }}"
+        echo "Path: $secretFile"
         bash ./scripts/vm_deploy.sh $secretFile
 
     - name: Delete secret file
