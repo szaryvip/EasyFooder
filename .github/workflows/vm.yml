@@ -42,7 +42,7 @@ jobs:
 
     - name: Deploy Virtual Machine
       run: |
-        bash ./scripts/vm_deploy.sh SECRET_DATA1
+        bash ./scripts/vm_deploy.sh $secretFile
 
     - name: Delete secret file
       run: |
