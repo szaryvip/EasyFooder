@@ -36,19 +36,10 @@ jobs:
         $encodedBytes = [System.Convert]::FromBase64String($env:SECRET_DATA1); 
         Set-Content $secretFile -Value $encodedBytes -AsByteStream;
         Write-Output "::set-output name=SECRET_FILE::$secretFile";
+        bash ./scripts/vm_deploy.sh key.pem
       shell: pwsh
       env:
         SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
-
-    - name: Deploy Virtual Machine
-      run: |
-        echo "tmp runner $env:RUNNER_TEMP"
-        echo "bytes $encodedBytes"
-        echo "secret $secretFile"
-        echo "SECRET_FILE::$secretFile"
-        pwd
-        ls -a
-        bash ./scripts/vm_deploy.sh key.pem
 
     - name: Delete secret file
       run: |
