@@ -53,9 +53,14 @@ then
 	echo "Missing Python packages installed."
 fi
 
-# echo "Running Django server... Press Ctrl+C anytime to stop execution"
-# python3 src/Django/EasyFooder/manage.py runserver
-echo "No i co teraz, baza danych ma stać? Fajnie, to sobie sam uruchom. #TODO"
+echo 'Running "makemigrations"...'
+python3 src/Django/EasyFooder/manage.py makemigrations
+
+echo 'Running "migrate"...'
+python3 src/Django/EasyFooder/manage.py migrate
+
+echo "Running Django server... Press Ctrl+C anytime to stop execution"
+python3 src/Django/EasyFooder/manage.py runserver
 
 deactivate
 
