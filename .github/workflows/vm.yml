@@ -6,14 +6,15 @@ on:
     workflows: ["Test coverage CI"]
     types:
       - completed
-
+      
 jobs:
   python:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [3.9]
-
+        
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
@@ -27,6 +28,7 @@ jobs:
       
   vm:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v2
     - name: Create secret-file.txt from B64_SECRET1
