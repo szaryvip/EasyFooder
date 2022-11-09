@@ -41,19 +41,9 @@ jobs:
       shell: pwsh
       env:
         SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
-        
-    - name: Write to secret-file.txt
-      run: |
-        echo "Key: $SECRET_DATA1"
-        echo "$SECRET_DATA1" > ${{ steps.secret-file1.outputs.SECRET_FILE }}
-      shell: bash
-      env:
-        SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
 
     - name: Deploy Virtual Machine
       run: |
         cd ${GITHUB_WORKSPACE}/
-        echo "${{ steps.secret-file1.outputs.SECRET_FILE }}"
         chmod 400 ${{ steps.secret-file1.outputs.SECRET_FILE }}
-        cat ${{ steps.secret-file1.outputs.SECRET_FILE }}
         bash ./scripts/vm_deploy.sh ${{ steps.secret-file1.outputs.SECRET_FILE }}
