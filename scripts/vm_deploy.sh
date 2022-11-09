@@ -29,3 +29,7 @@ else
 	echo "Please see logs on the host in case anything went wrong."
 fi
 
+echo "DEBUG INFO:"
+echo
+echo $RESULT
+
