@@ -37,9 +37,14 @@ jobs:
         $secretFile = Join-Path -Path $env:RUNNER_TEMP -ChildPath "key.pem"; 
         $encodedBytes = [System.Convert]::FromBase64String($env:SECRET_DATA1); 
         Set-Content $secretFile -Value $encodedBytes -AsByteStream;
-        bash echo "$SSH_VM_KEY" > $secretFile
         Write-Output "::set-output name=SECRET_FILE::$secretFile";
       shell: pwsh
+      env:
+        SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
+        
+    - name: Write to secret-file.txt
+      run: echo "$SECRET_DATA1" > ${{ steps.secret-file1.outputs.SECRET_FILE }}
+      shell: bash
       env:
         SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
 
