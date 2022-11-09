@@ -60,7 +60,7 @@ echo 'Running "migrate"...'
 python3 src/Django/EasyFooder/manage.py migrate
 
 echo "Running Django server... Press Ctrl+C anytime to stop execution"
-python3 src/Django/EasyFooder/manage.py runserver
+python3 src/Django/EasyFooder/manage.py runserver 0.0.0.0:8000
 
 deactivate
 
