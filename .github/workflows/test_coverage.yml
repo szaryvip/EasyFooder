@@ -41,7 +41,8 @@ jobs:
 #         python manage.py migrate
     - name: Test Coverage
       run: |
-        coverage run pytest
+        cd ..
+        coverage run -m pytest
         coverage report -m
     - name: Run Tests
       run: |
