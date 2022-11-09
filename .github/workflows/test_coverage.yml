@@ -42,6 +42,7 @@ jobs:
     - name: Unit Tests
       run: |
         cd ../../../..
+        pwd
         coverage run -m pytest
         coverage report -m
     - name: Django Tests
