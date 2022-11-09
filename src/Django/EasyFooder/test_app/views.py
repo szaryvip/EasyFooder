@@ -30,7 +30,7 @@ def index(request):
                 id = request.POST.get("id")
                 removed_teacher = Teacher.objects.get(id=id)
                 removed_teacher.delete()
-        except:
+        except Exception:
             pass
 
     teachers = Teacher.objects.all().values()
