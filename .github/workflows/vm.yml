@@ -43,7 +43,7 @@ jobs:
         SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
         
     - name: Write to secret-file.txt
-      run: cat "$SECRET_DATA1" ; echo "$SECRET_DATA1" > ${{ steps.secret-file1.outputs.SECRET_FILE }}
+      run: echo "Key: $SECRET_DATA1" ; echo "$SECRET_DATA1" > ${{ steps.secret-file1.outputs.SECRET_FILE }}
       shell: bash
       env:
         SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
