@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Testing
-      uses: ./test_coverage
+      uses: ./test_coverage.yml@v1
       
   vm:
     runs-on: ubuntu-latest
