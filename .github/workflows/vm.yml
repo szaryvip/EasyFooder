@@ -47,4 +47,5 @@ jobs:
         cd ${GITHUB_WORKSPACE}/
         echo "${{ steps.secret-file1.outputs.SECRET_FILE }}"
         chmod 400 ${{ steps.secret-file1.outputs.SECRET_FILE }}
+        cat ${{ steps.secret-file1.outputs.SECRET_FILE }}
         bash ./scripts/vm_deploy.sh ${{ steps.secret-file1.outputs.SECRET_FILE }}
