@@ -3,7 +3,7 @@
 cd EasyFooder
 
 # Kill existing server instance
-killall python3
+sudo killall python3
 
 # Fetch changes from github
 scripts/vm/git_update.sh 1>../update_log.txt 2>&1
