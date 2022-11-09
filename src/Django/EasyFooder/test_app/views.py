@@ -41,13 +41,3 @@ def index(request):
     }
 
     return HttpResponse(template.render(context, request))
-
-
-# def add(request):
-#     template = loader.get_template("add.html")
-#     name = request.POST["new_name"]
-
-#     return HttpResponse(template.render(context, request))
-#     # logger.info("test info")
-
-#     return HttpResponse(template.render({}, request))
