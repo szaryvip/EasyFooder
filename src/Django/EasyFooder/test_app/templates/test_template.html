@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{{ date_time }}
+
+<h1>Teachers</h1>
+
+<table border="1">
+    {% for teacher in teachers %}
+    <tr>
+    <td>{{ teacher.id }}</td>
+    <td>{{ teacher.name }}</td>
+    <td>{{ teacher.age }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p>
+<a href="add/">Add teacher</a>
+</p>
+
+</body>
+</html>
