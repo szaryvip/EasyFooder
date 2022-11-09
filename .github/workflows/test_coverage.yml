@@ -41,7 +41,7 @@ jobs:
         python manage.py migrate
     - name: Unit Tests
       run: |
-        cd ../../../..
+        cd ../../..
         pwd
         coverage run -m pytest
         coverage report -m
