@@ -13,7 +13,7 @@ fi
 echo "Connecting to the VM..."
 
 # SSH connection here, print something if no key is installed
-RESULT=`ssh -o StrictHostKeyChecking=no -i "$1" "azureuser@13.69.122.187" 2>&1 < scripts/vm/restart.sh`
+RESULT=`ssh -o StrictHostKeyChecking=no -i "$1" "azureuser@20.224.115.41" 2>&1 < scripts/vm/restart.sh`
 
 if [[ ! -z `echo "$RESULT" | grep "not accessible"` ]]
 then
