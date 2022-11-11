@@ -40,7 +40,7 @@ jobs:
         Write-Output "::set-output name=SECRET_FILE::$secretFile";
       shell: pwsh
       env:
-        SECRET_DATA1: ${{ secrets.SSH_VM_KEY }}
+        SECRET_DATA1: ${{ secrets.SSH_PROD_VM_KEY }}
 
     - name: Deploy Virtual Machine
       run: |
