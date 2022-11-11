@@ -3,6 +3,7 @@
 ## Details
 Section TODO
 
+
 ## Running the application
 ### Prerequisites
 In order to run the application, Python 3.9 or higher is required.
