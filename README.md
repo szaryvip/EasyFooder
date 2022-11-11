@@ -1,7 +1,7 @@
 # EasyFooder
 
 ## Details
-Section TODO
+Section TODO0
 
 ## Running the application
 ### Prerequisites
