@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo -u postgres psql -c "DROP TABLE test_app_teacher"
 
 cd ./src/Django/EasyFooder
