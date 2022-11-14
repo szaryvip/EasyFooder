@@ -3,6 +3,9 @@
 import os
 import sys
 
+if "runserver" not in sys.argv:
+    sys.argv.append("runserver")
+
 
 def main():
     """Run administrative tasks."""
