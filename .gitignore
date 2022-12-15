@@ -18,3 +18,5 @@ db.sqlite3
 
 .vscode/
 venv/
+
+.pytest_cache/

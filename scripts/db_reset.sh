@@ -9,7 +9,9 @@ sudo -u postgres -i psql -c "DROP TABLE test_app_user"
 
 cd ./src/Django/EasyFooder/
 
-python3 manage.py migrate --fake test_app zero
+cd ./src/Django/EasyFooder
+python3 manage.py migrate --fake Users zero
+python3 manage.py migrate --fake Meals zero
 
 find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 find . -path "*/migrations/*.pyc"  -delete
