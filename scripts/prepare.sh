@@ -78,9 +78,9 @@ $VENV/bin/python3 -m pip install wheel
 $VENV/bin/python3 -m pip install -r requirements.txt
 
 # Database configuration
-read -p "Configure database? (y/n) " -n 1 -r
+read -p "Configure database? (y/n) " -n 1 -r $db_reply < /dev/tty
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $db_reply =~ ^[Yy]$ ]]
 then
 	scripts/db_setup.sh
 fi
