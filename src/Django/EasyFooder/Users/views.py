@@ -47,4 +47,8 @@ def make_order(request):
     else:
         form = OrderForm()
 
-    return render(request, 'make_order.html', {'form': form})
+    # TODO: use actual suggestions
+    suggestions = Meal.objects.all().values()
+    return render(
+        request, 'make_order.html', {'form': form, 'suggestions': suggestions}
+    )
