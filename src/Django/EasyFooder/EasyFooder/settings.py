@@ -36,13 +36,14 @@ ALLOWED_HOSTS = ["10.0.0.4", "52.157.157.162", "0.0.0.0", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    'Users.apps.UsersConfig',
+    'Meals.apps.MealsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'test_app.apps.TestAppConfig',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
