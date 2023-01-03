@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Orders</h1>
+  
+<ul>
+  {% for order in orders %}
+    {% for meal in meals %}
+      {% if meal.meal_id == order.meal_id_id %}
+        <li>{{ order.date }} = {{ meal.name }} </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+</body>
+</html>
