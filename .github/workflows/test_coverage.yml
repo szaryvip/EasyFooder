@@ -36,7 +36,7 @@ jobs:
     - name: Run migrations
       run: |
         cd src/Django/EasyFooder
-        python3 makemigrations
+        python makemigrations
         python manage.py migrate
     - name: Unit Tests
       run: |
