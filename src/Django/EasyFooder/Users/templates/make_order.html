@@ -1,14 +1,26 @@
-<h1>Suggestions</h1>
-  
-<ul>
-  {% for suggestion in suggestions %}
-    <li>{{ suggestion.name }} - {{ suggestion.price }} </li>
-  {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="container py-5">
+    <a href="logout">Logout</a>
+    <a href="/users">Main Page</a>
+  </div>
+
+  <div class="container py-5">
+    <h1>Suggestions</h1>
+      
+    <ul>
+      {% for suggestion in suggestions %}
+        <li>{{ suggestion.name }} - {{ suggestion.price }} </li>
+      {% endfor %}
+    </ul>
 
 
-<form action="make_order" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+    <form action="make_order" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

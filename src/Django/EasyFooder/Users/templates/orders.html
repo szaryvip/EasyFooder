@@ -2,17 +2,22 @@
 <html>
 <body>
 
-<h1>Orders</h1>
-  
-<ul>
-  {% for order in orders %}
-    {% for meal in meals %}
-      {% if meal.meal_id == order.meal_id_id %}
-        <li>{{ order.date }} = {{ meal.name }} </li>
-      {% endif %}
+  <div class="container py-5">
+      <a href="logout">Logout</a>
+      <a href="/users">Main Page</a>
+  </div>
+
+  <h1>Orders</h1>
+    
+  <ul>
+    {% for order in orders %}
+      {% for meal in meals %}
+        {% if meal.meal_id == order.meal_id_id %}
+          <li>{{ order.date }} = {{ meal.name }} </li>
+        {% endif %}
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
-</ul>
+  </ul>
 
 </body>
 </html>

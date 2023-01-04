@@ -1,10 +1,6 @@
 from django.db import models
 from Meals.models import Meal
-
-class User(models.Model):
-    user_id = models.BigIntegerField(primary_key=True)
-    login = models.CharField(max_length=30)
-    password = models.CharField(max_length=128)
+from django.contrib.auth.models import User
     
     
 class Order(models.Model):

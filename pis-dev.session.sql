@@ -2,7 +2,6 @@
 -- DROP TABLE "Users_order";
 -- DROP TABLE "Meals_meal";
 -- DROP TABLE "Meals_tag";
--- DROP TABLE "Users_user";
 
 -- seedowanie posiłków
 INSERT INTO "Meals_meal" (meal_id, name, price)
@@ -66,14 +65,6 @@ VALUES (
     '2',
     '5',
     '2'
-  );
-
--- seed usera testowego
-INSERT INTO "Users_user" (user_id, login, password)
-VALUES (
-    '1',
-    'login:test',
-    'password:test'
   );
 
 -- seed przykladowego zamowienia
