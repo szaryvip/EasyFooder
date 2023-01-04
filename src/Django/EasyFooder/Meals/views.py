@@ -34,8 +34,7 @@ def make_order(request):
         if request.method == 'POST':
             form = OrderForm(request.POST)
             if form.is_valid():
-                meal_id = form.cleaned_data["meal_id"]
-                meal = Meal.objects.get(meal_id=meal_id)
+                meal = form.cleaned_data["meal"]
                 user = User.objects.get(id=1)
                 order = Order(
                     user_id=user, order_id=9001, date="2077-09-09 12:00",

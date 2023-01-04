@@ -3,6 +3,9 @@ from Meals.models import Meal
 
 
 class OrderForm(forms.Form):
-    meals = Meal.objects.all().values()
-    meals = [(meal['meal_id'], meal['name']) for meal in meals]
-    meal_id = forms.ChoiceField(choices=meals)
+    meal = forms.ModelChoiceField(queryset=Meal.objects.all(), initial=0)
+
+    def __init__(self, *args, **kwargs):
+        super(OrderForm, self).__init__(*args, **kwargs)
+
+        self.fields['meal'].label_from_instance = lambda instance: instance.name
