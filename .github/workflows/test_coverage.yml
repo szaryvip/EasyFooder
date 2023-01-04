@@ -35,8 +35,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run migrations
       run: |
-        bash ./scripts/db_reset.sh
-        python src/Django/EasyFooder/manage.py makemigrations
         python src/Django/EasyFooder/manage.py migrate
     - name: Unit Tests
       run: |

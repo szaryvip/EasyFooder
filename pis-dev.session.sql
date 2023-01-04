@@ -68,7 +68,7 @@ VALUES (
   );
 
 -- seed przykladowego zamowienia
-INSERT INTO "Users_order" (order_id, date, status, meal_id_id, user_id_id)
+INSERT INTO "Meals_order" (order_id, date, status, meal_id_id, user_id_id)
 VALUES (
     '1',
     '02/01/2023',

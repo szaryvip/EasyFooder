@@ -1,9 +1,9 @@
 #!/bin/bash
 
-sudo -u postgres -i psql -c "DROP TABLE 'Meals_meal_tag'"
-sudo -u postgres -i psql -c "DROP TABLE 'Users_order'"
-sudo -u postgres -i psql -c "DROP TABLE 'Meals_meal'"
-sudo -u postgres -i psql -c "DROP TABLE 'Meals_tag'"
+sudo -u postgres -i psql -c "DROP TABLE Meals_meal_tag"
+sudo -u postgres -i psql -c "DROP TABLE Meals_order"
+sudo -u postgres -i psql -c "DROP TABLE Meals_meal"
+sudo -u postgres -i psql -c "DROP TABLE Meals_tag"
 
 cd ./src/Django/EasyFooder/
 

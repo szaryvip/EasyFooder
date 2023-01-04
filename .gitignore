@@ -21,4 +21,3 @@ venv/
 
 .pytest_cache/
 
-src/Django/EasyFooder/*/migrations
