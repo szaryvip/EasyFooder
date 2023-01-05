@@ -8,7 +8,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .forms import OrderForm
+from Users.recommendation import recommend
+from django.db.models import Max
 
+from datetime import datetime
 from .models import Order
 from Meals.models import Meal
 
@@ -35,17 +38,20 @@ def make_order(request):
             form = OrderForm(request.POST)
             if form.is_valid():
                 meal = form.cleaned_data["meal"]
-                user = User.objects.get(id=1)
+                user = request.user
+                orders = Order.objects.all()
+                order_id = orders.aggregate(Max('order_id'))['order_id__max'] + 1 if orders else 1
                 order = Order(
-                    user_id=user, order_id=9001, date="2077-09-09 12:00",
-                    status="leci se", meal_id=meal
+                    user_id=user, order_id=order_id,
+                    date=datetime.now().strftime("%Y-%m-%d %H:%M"),
+                    status="Zamówiono", meal_id=meal
                 )
                 order.save()
                 return HttpResponseRedirect('orders')
         elif request.method == 'GET':
             form = OrderForm()
 
-        suggestions = Meal.objects.all().values()
+        suggestions = recommend(request.user, User.objects.all())
         return render(
             request, 'make_order.html', {
                 'form': form, 'suggestions': suggestions
