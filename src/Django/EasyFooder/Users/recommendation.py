@@ -52,7 +52,7 @@ def get_user_meals(user: User):
 def get_most_popular_meals(n: int) -> list[Meal]:
     """
     Returns list of n most popular meals in all database
-    ordered by number of occurences
+    ordered by number of occurrences
     """
     orders = Order.objects.all()
     meals = [order.meal_id for order in orders]
