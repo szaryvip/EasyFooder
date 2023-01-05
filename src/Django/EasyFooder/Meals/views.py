@@ -16,6 +16,18 @@ from .models import Order
 from Meals.models import Meal
 
 
+def meals(request):
+    if request.user.is_authenticated:
+        meals = Meal.objects.all().values()
+        template = loader.get_template('meals.html')
+        context = {
+            'meals': meals
+        }
+        return HttpResponse(template.render(context, request))
+    else:
+        return redirect('login')
+
+
 def orders(request):
     if request.user.is_authenticated:
         orders = Order.objects.all().values()

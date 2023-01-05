@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <div class="container py-5">
+      <a href="/users/logout">Logout</a>
+      <a href="/">Main Page</a>
+  </div>
+
+  <h1>Meals available</h1>
+    
+  <ul>
+    {% for meal in meals %}
+        <li>{{ meal.name }}: {{ meal.price }} </li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
