@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
+{% load static %}
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
 <body>
-
-  <div class="container py-5">
-      <a href="/users/logout">Logout</a>
-      <a href="/">Main Page</a>
-  </div>
-
-  <h1>Orders</h1>
+  <h1>Orders history</h1>
     
   <ul>
     {% for order in orders %}
@@ -19,5 +21,11 @@
     {% endfor %}
   </ul>
 
+  <div class="container py-5">
+    <a href="/">Main Page</a>
+    <a href="/users/logout">Logout</a>
+  </div>
+
 </body>
+
 </html>

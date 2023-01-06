@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
+
+{% load static %}
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
 <body>
-  <div class="container py-5">
-    <a href="/users/logout">Logout</a>
-    <a href="/">Main Page</a>
-  </div>
 
   <div class="container py-5">
-    <h1>Suggestions</h1>
-      
+    <h1>Make an order</h1>
+    
+    <h2>Suggestions</h2>
     <ul>
       {% for suggestion in suggestions %}
         <li>{{ suggestion.name }} - {{ suggestion.price }} </li>
       {% endfor %}
     </ul>
 
-
+    <h2>Your order</h2>
     <form action="make_order" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Submit">
     </form>
   </div>
+
+
+  <div class="container py-5">
+    <a href="/">Main Page</a>
+    <a href="/users/logout">Logout</a>
+  </div>
 </body>
+
 </html>
