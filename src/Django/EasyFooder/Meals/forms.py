@@ -8,5 +8,6 @@ class OrderForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(OrderForm, self).__init__(*args, **kwargs)
 
-        self.fields['meal'].label_from_instance = lambda instance: instance.name
+        self.fields['meal'].label_from_instance =\
+            lambda instance: instance.name
         self.fields['meal'].label = ""
