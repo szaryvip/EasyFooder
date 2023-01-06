@@ -36,10 +36,6 @@ jobs:
     - name: Run migrations
       run: |
         python src/Django/EasyFooder/manage.py migrate
-    - name: Unit Tests
-      run: |
-        coverage run -m pytest
-        coverage report -m
     - name: Django Tests
       run: |
         cd src/Django/EasyFooder
