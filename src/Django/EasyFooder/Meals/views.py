@@ -1,12 +1,8 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader_tags
 from django.template import loader
-from django.shortcuts import  render, redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib import messages
 from .forms import OrderForm
 from Users.recommendation import recommend
 from django.db.models import Max
@@ -25,7 +21,7 @@ def meals(request):
         }
         return HttpResponse(template.render(context, request))
     else:
-        return redirect('login')
+        return redirect('/users/login')
 
 
 def orders(request):
@@ -41,7 +37,7 @@ def orders(request):
 
         return HttpResponse(template.render(context, request))
     else:
-        return redirect('login')
+        return redirect('/users/login')
 
 
 def make_order(request):
@@ -70,4 +66,4 @@ def make_order(request):
             }
         )
     else:
-        return redirect('login')
+        return redirect('/users/login')

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+import sys
 from pathlib import Path
 import environ
 
@@ -104,6 +105,12 @@ else:
             'HOST': env("DB_HOST"),
             'PORT': env("DB_PORT"),
         }
+    }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3'
     }
 
 # Password validation
