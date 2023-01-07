@@ -32,10 +32,11 @@ class UsersApiViewTest(TestCase):
         self.assertTemplateUsed(response, "register.html")
 
     def test_view_post_login(self):
-        response = self.client.post('/users/login',
-                                    json.dumps({'username': 'username',
-                                                'password': 'password'}),
-                                    content_type='application/json')
+        response = self.client.post(
+            '/users/login',
+            json.dumps({'username': 'username', 'password': 'password'}),
+            content_type='application/json'
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "login.html")
 

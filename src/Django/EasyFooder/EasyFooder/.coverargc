@@ -1,0 +1,14 @@
+[run]
+source =
+    Users
+    Meals
+omit =
+    */migrations/*
+    */admin.py
+    */apps.py
+    */tests/*
+
+[report]
+show_missing = True
+skip_covered = False
+skip_empty = True
