@@ -35,6 +35,7 @@ class Meal_TagAdmin(admin.ModelAdmin):
         return obj.tag.name
     get_tag_name.short_description = "Tag name"
 
+
 class OrderAdmin(admin.ModelAdmin):
     model = Order
     list_display = ('date', 'get_username', 'get_meal_name', 'status')
