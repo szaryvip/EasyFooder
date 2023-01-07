@@ -26,13 +26,11 @@ def meals(request):
 
 def orders(request):
     if request.user.is_authenticated:
-        orders = Order.objects.all().values()
-        meals = Meal.objects.all().values()
+        orders = Order.objects.all()
 
         template = loader.get_template('orders.html')
         context = {
-            'orders': orders,
-            'meals': meals
+            'orders': orders
         }
 
         return HttpResponse(template.render(context, request))
@@ -48,9 +46,8 @@ def make_order(request):
                 meal = form.cleaned_data["meal"]
                 user = request.user
                 orders = Order.objects.all()
-                order_id = orders.aggregate(Max('order_id'))['order_id__max'] + 1 if orders else 1
                 order = Order(
-                    user_id=user, order_id=order_id,
+                    user_id=user,
                     date=datetime.now().strftime("%Y-%m-%d %H:%M"),
                     status="Zamówiono", meal_id=meal
                 )

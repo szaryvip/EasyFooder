@@ -13,11 +13,12 @@
     
   <ul>
     {% for order in orders %}
-      {% for meal in meals %}
-        {% if meal.meal_id == order.meal_id_id %}
-          <li>{{ order.date }} = {{ meal.name }} </li>
-        {% endif %}
-      {% endfor %}
+      <li>{{ order.date }} = {{ order.meal_id.name }}</li>
+<!--      {% for meal in meals %}-->
+<!--        {% if meal.meal_id == order.meal_id_id %}-->
+<!--          <li>{{ order.date }} = {{ meal.name }} </li>-->
+<!--        {% endif %}-->
+<!--      {% endfor %}-->
     {% endfor %}
   </ul>
 
