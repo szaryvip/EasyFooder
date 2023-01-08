@@ -20,7 +20,7 @@ class MealsApiViewTest(TestCase):
 
     def test_view_meals_without_auth(self):
         response = self.client.get('/meals', follow=True)
-        self.assertRedirects(response, '/users/login', status_code=301)
+        self.assertTemplateUsed(response, 'login.html')
 
     def test_view_orders_without_auth(self):
         response = self.client.get('/meals/orders')
