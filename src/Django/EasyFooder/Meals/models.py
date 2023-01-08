@@ -6,21 +6,9 @@ class Meal(models.Model):
     name = models.CharField(max_length=60)
     price = models.DecimalField(decimal_places=2, max_digits=6)
 
-    def __repr__(self):
-        return f"Meal: {self.name}"
-
-    def __str__(self):
-        return self.name
-
 
 class Tag(models.Model):
     name = models.CharField(max_length=15)
-
-    def __repr__(self):
-        return f"Tag: {self.name}"
-
-    def __str__(self):
-        return self.name
 
 
 class Meal_tag(models.Model):

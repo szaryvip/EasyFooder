@@ -1,11 +1,9 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from .forms import OrderForm
 from Users.recommendation import recommend
-from django.db.models import Max
 
 from datetime import datetime
 from .models import Order
@@ -45,14 +43,13 @@ def make_order(request):
             if form.is_valid():
                 meal = form.cleaned_data["meal"]
                 user = request.user
-                orders = Order.objects.all()
                 order = Order(
                     user_id=user,
                     date=datetime.now().strftime("%Y-%m-%d %H:%M"),
                     status="Zamówiono", meal_id=meal
                 )
                 order.save()
-                return HttpResponseRedirect('orders')
+                return redirect('orders')
         elif request.method == 'GET':
             form = OrderForm()
 
