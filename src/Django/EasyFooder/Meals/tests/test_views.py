@@ -7,6 +7,9 @@ import json
 from datetime import datetime, timezone
 
 
+from Meals.forms import OrderForm
+
+
 class MealsApiViewTest(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -51,7 +54,7 @@ class MealsApiViewTest(TestCase):
         self.client.login(username='username', password='password')
         response = self.client.post(
             '/meals/make_order',
-            json.dumps({'meal': '1'}),
-            content_type='application/json'
+            data={'meal': '1'},
+            follow=True
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'orders.html')
