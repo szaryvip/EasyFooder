@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from .forms import OrderForm
 from Users.recommendation import recommend
 
-from datetime import datetime
+from datetime import datetime, timezone
 from .models import Order
 from Meals.models import Meal
 
@@ -45,11 +45,15 @@ def make_order(request):
                 user = request.user
                 order = Order(
                     user_id=user,
-                    date=datetime.now().strftime("%Y-%m-%d %H:%M"),
+                    date=datetime.now().replace(
+                        tzinfo=timezone.utc
+                    ),
                     status="Zamówiono", meal_id=meal
                 )
                 order.save()
                 return redirect('orders')
+            else:
+                print("not valid")
         elif request.method == 'GET':
             form = OrderForm()
 
