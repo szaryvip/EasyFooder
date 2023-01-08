@@ -52,8 +52,6 @@ def make_order(request):
                 )
                 order.save()
                 return redirect('orders')
-            else:
-                print("not valid")
         elif request.method == 'GET':
             form = OrderForm()
 
