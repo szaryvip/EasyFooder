@@ -10,17 +10,21 @@
 
 <body>
   <h1>Orders history</h1>
-    
-  <ul>
+  
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Meal</th>
+      <th>Status</th>
+    </tr>
     {% for order in orders %}
-      <li>{{ order.date }} = {{ order.meal_id.name }}</li>
-<!--      {% for meal in meals %}-->
-<!--        {% if meal.meal_id == order.meal_id_id %}-->
-<!--          <li>{{ order.date }} = {{ meal.name }} </li>-->
-<!--        {% endif %}-->
-<!--      {% endfor %}-->
+    <tr>
+        <td>{{ order.date }} </td>
+        <td>{{ order.meal_id.name }} </td>
+        <td>{{ order.status }} </td>
+    </tr>
     {% endfor %}
-  </ul>
+  </table>
 
   <div class="container py-5">
     <a href="/">Main Page</a>

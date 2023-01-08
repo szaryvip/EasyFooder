@@ -14,11 +14,18 @@
     <h1>Make an order</h1>
     
     <h2>Suggestions</h2>
-    <ul>
-      {% for suggestion in suggestions %}
-        <li>{{ suggestion.name }} - {{ suggestion.price }} </li>
+    <table>
+      <tr>
+        <th>Meal</th>
+        <th>Price</th>
+      </tr>
+      {% for meal in suggestions %}
+      <tr>
+          <td>{{ meal.name }} </td>
+          <td>{{ meal.price }} </td>
+      </tr>
       {% endfor %}
-    </ul>
+    </table>
 
     <h2>Your order</h2>
     <form action="make_order" method="post">

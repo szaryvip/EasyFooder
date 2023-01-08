@@ -11,12 +11,19 @@
 <body>
 
   <h1>Available meals</h1>
-    
-  <ul>
+  
+  <table>
+    <tr>
+      <th>Meal</th>
+      <th>Price</th>
+    </tr>
     {% for meal in meals %}
-        <li>{{ meal.name }}: {{ meal.price }} </li>
+    <tr>
+        <td>{{ meal.name }} </td>
+        <td>{{ meal.price }} </td>
+    </tr>
     {% endfor %}
-  </ul>
+  </table>
 
   <div class="container py-5">
     <a href="/">Main Page</a>
