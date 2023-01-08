@@ -1,11 +1,12 @@
 #!/bin/bash
 
-sudo -u postgres -i psql -c "DROP TABLE Meals_meal_tag"
-sudo -u postgres -i psql -c "DROP TABLE Meals_order"
-sudo -u postgres -i psql -c "DROP TABLE Meals_meal"
-sudo -u postgres -i psql -c "DROP TABLE Meals_tag"
 
-cd ./src/Django/EasyFooder/
+PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_meal_tag\""
+PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_order\""
+PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_meal\""
+PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_tag\""
+
+# sudo -u postgres -i psql -c "DROP TABLE \"Meals_meal_tag"
 
 cd ./src/Django/EasyFooder
 python3 manage.py migrate --fake Users zero
