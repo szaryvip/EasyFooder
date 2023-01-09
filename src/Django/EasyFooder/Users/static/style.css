@@ -39,13 +39,7 @@ body, .container {
 .container {
     /* background-color: #F8EBD7; */
     padding: 20px;
-    width: 90%;
-}
-
-
-#logo {
-    position:fixed; 
-	top:50px;
+    width: 100%;
 }
 
 form {
@@ -58,36 +52,59 @@ form {
 }
 
 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
-input{
-    width: 100%;
+input, select {
+    width: 70%;
+    font-size: 22px;
+}
+
+small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    font-size: 15px;
+}
+
+ul {
+    padding-left: 20px;
 }
 
 input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
-input[type="submit"], select {
+input[type="submit"] {
     /* background-color: #04AA6D; */
     background-color: #CFA716;
     color: black;
-    padding: 20px;
-    margin: 8px 0;
+    padding: 12px;
+    margin: 10px 0 10px;
     border: none;
     cursor: pointer;
 
     font-size: 30px;
 }
 
-select {
-    background-color: white;
+.bottom_button {
+    background-color: #04AA6D !important;
 }
+
+/* select {
+    font-size: 20px;
+    width: 100%;
+    background-color: white;
+} */
 
 /* Add a hover effect for buttons */
 button:hover {
@@ -98,5 +115,20 @@ button:hover {
 .asteriskField {
     display: none;
 }
+
+table {
+    border-spacing: 20px 0;
+    margin: 30px;
+}
+
+caption {
+    font-size: 30px;
+    margin: 20px;
+}
+
+tr:hover {
+    background-color: black;
+}
+
 
 /* https://coolors.co/1e1e24-92140c-fff8f0-ffcf99-111d4a */

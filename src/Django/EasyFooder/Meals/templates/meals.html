@@ -25,10 +25,12 @@
     {% endfor %}
   </table>
 
-  <div class="container py-5">
-    <a href="/">Main Page</a>
-    <a href="/users/logout">Logout</a>
-  </div>
+  <form action="/">
+    <input type="submit" value="Main page" class="bottom_button" />
+  </form>
+  <form action="/users/logout">
+    <input type="submit" value="Logout" class="bottom_button" />
+  </form>
 
 </body>
 

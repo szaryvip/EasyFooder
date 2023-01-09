@@ -27,11 +27,11 @@
         </form>
     </div>
 
-    <div class="container py-5">
-        {% if user.is_authenticated %}
-          <a href="users/logout">Logout</a>
-        {% endif %}
-    </div>
+    {% if user.is_authenticated %}
+        <form action="/users/logout">
+            <input type="submit" value="Logout" class="bottom_button" />
+        </form>
+    {% endif %}
 </body>
 
 </html>

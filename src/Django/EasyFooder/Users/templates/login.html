@@ -20,10 +20,12 @@
         <form action="login" method="post">
             {% csrf_token %}
             {{ form|crispy }}
-            <input type="submit" value="Submit">
+            <input type="submit" value="Login">
         </form>
 
-        <p class="text-center">Don't have an account? <a href="register">Create an account</a>.</p>
+        <form action="/users/register">
+            <input type="submit" value="Register" class="bottom_button" />
+        </form>
     </div>
 </body>
 
