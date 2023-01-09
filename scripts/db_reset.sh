@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_meal_tag\""
-PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_order\""
-PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_meal\""
-PGPASSWORD=szarejko123 psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_tag\""
+psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_meal_tag\""
+psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_order\""
+psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_meal\""
+psql -h 52.157.157.162 -U postgres -c "DROP TABLE \"Meals_tag\""
 
 # sudo -u postgres -i psql -c "DROP TABLE \"Meals_meal_tag"
 
