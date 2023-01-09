@@ -179,11 +179,11 @@ VALUES (
   );
 
 -- seed przykladowego zamowienia
-INSERT INTO "Meals_order" (id, date, status, meal_id_id, user_id_id)
-VALUES (
-    '1',
-    '02/01/2023',
-    'Dostarczono',
-    '1',
-    '1'
-  );
+-- INSERT INTO "Meals_order" (id, date, status, meal_id_id, user_id_id)
+-- VALUES (
+--     '1',
+--     '02/01/2023',
+--     'Dostarczono',
+--     '1',
+--     '1'
+--   );
