@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <h1>Orders history</h1>
+  
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Meal</th>
+      <th>Status</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.date }} </td>
+        <td>{{ order.meal_id.name }} </td>
+        <td>{{ order.status }} </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <div class="container py-5">
+    <form action="/">
+      <input type="submit" value="Main page" class="bottom_button" />
+    </form>
+    <form action="/users/logout">
+      <input type="submit" value="Logout" class="bottom_button" />
+    </form>
+  </div>
+
+</body>
+
+</html>

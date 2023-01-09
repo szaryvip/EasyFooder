@@ -35,13 +35,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run migrations
       run: |
-        cd src/Django/EasyFooder
-        python manage.py migrate
-    - name: Unit Tests
-      run: |
-        cd ../../..
-        coverage run -m pytest
-        coverage report -m
+        python src/Django/EasyFooder/manage.py migrate
     - name: Django Tests
       run: |
         cd src/Django/EasyFooder

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+
+{% load static %}
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+    {% load crispy_forms_tags %} 
+    <div class="container py-5">
+        <h1>Registration</h1>
+
+        <form action="register" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Register">
+        </form>
+
+        <form action="/users/login">
+            <input type="submit" value="Login" class="bottom_button" />
+        </form>
+    </div>
+
+</body>
+
+</html>

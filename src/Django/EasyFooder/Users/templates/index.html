@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <!-- <h1 id="logo">EasyFooder</h1> -->
+
+    <h1>EasyFooder</h1>
+    
+    <div class="container py-5">
+        <!-- <p>We are happy to have you back {{ login }}!</p> -->
+
+        <form action="../meals">
+            <input type="submit" value="Available meals" />
+        </form>
+        <form action="../meals/orders">
+            <input type="submit" value="Orders history" />
+        </form>
+        <form action="../meals/make_order">
+            <input type="submit" value="Make an order" />
+        </form>
+    </div>
+
+    {% if user.is_authenticated %}
+        <form action="/users/logout">
+            <input type="submit" value="Logout" class="bottom_button" />
+        </form>
+    {% endif %}
+</body>
+
+</html>

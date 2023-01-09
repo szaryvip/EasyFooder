@@ -1,7 +1,8 @@
 # EasyFooder
 
 ## Details
-Section TODO00
+
+Ready
 
 
 ## Running the application

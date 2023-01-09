@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+  <h1>Available meals</h1>
+  
+  <table>
+    <tr>
+      <th>Meal</th>
+      <th>Price</th>
+    </tr>
+    {% for meal in meals %}
+    <tr>
+        <td>{{ meal.name }} </td>
+        <td>{{ meal.price }} </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <form action="/">
+    <input type="submit" value="Main page" class="bottom_button" />
+  </form>
+  <form action="/users/logout">
+    <input type="submit" value="Logout" class="bottom_button" />
+  </form>
+
+</body>
+
+</html>
