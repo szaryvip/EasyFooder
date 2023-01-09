@@ -1,7 +1,9 @@
 # EasyFooder
 
 ## Details
+
 Ready
+
 
 ## Running the application
 ### Prerequisites
