@@ -2,7 +2,7 @@
 
 ## Details
 
-Ready
+Readyv2
 
 
 ## Running the application
